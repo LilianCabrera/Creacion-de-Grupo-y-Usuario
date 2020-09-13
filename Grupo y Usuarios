@@ -1,0 +1,18 @@
+#!bin/bash
+#Creacion de Grupo "Comercial"
+groupadd comercial
+
+#Creacion del primer usuario "Gerente"
+useradd -m-d /home/gerente -s /bin/bash gerente
+
+#Creacion del segundo usuario "Cajero"
+useradd -m-d /home/cajero -s /bin/bash cajero
+
+#Agregar el primer usuario a "Comercial"
+ussermod -a-G gerente comercial
+
+#Agregar el segundo usuario a "Comercial"
+ussermod -a-G cajero comercial
+
+#Cambiar nombre del Grupo "Comercial" a "Empresa"
+groupmod -n comercial empresa 
